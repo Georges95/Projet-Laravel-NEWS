@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{asset('back_auth/assets/css/bootstrap.min.css')}}" />
 <link
   rel="stylesheet"
-  href="assets/plugins/fontawesome/css/fontawesome.min.css"
+  href="{{asset('back_auth/assets/plugins/fontawesome/css/fontawesome.min.css')}}"
 />
 <link rel="stylesheet" href="{{asset('back_auth/assets/plugins/fontawesome/css/all.min.css')}}" />
 <link rel="stylesheet" href="{{asset('back_auth/assets/css/feathericon.min.css')}}" />

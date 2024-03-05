@@ -75,9 +75,8 @@
                         >
                           <line x1="12" y1="1" x2="12" y2="23"></line>
                           <path
-                            d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
-                          ></path></svg
-                      ></span>
+                            d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        </span>
                     </div>
                   </div>
                 </div>
@@ -92,7 +91,7 @@
                       <h6 class="text-muted">Total Commentaires</h6>
                     </div>
                     <div class="ml-auto mt-md-3 mt-lg-0">
-                      <span class="opacity-7 text-muted"
+                        <span class="opacity-7 text-muted"
                         ><svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -110,8 +109,8 @@
                           ></path>
                           <polyline points="14 2 14 8 20 8"></polyline>
                           <line x1="12" y1="18" x2="12" y2="12"></line>
-                          <line x1="9" y1="15" x2="15" y2="15"></line></svg
-                      ></span>
+                          <line x1="9" y1="15" x2="15" y2="15"></line></svg>
+                        </span>
                     </div>
                   </div>
                 </div>
@@ -143,8 +142,8 @@
                           <line x1="2" y1="12" x2="22" y2="12"></line>
                           <path
                             d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                          ></path></svg
-                      ></span>
+                          ></path></svg>
+                        </span>
                     </div>
                   </div>
                 </div>

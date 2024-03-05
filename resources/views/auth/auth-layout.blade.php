@@ -11,7 +11,8 @@
 	<link rel="stylesheet" href="{{asset('back_auth/assets/plugins/fontawesome/css/fontawesome.min.css')}}">
 	<link rel="stylesheet" href="{{asset('back_auth/assets/css/feathericon.min.css')}}">
 	<link rel="stylesheet" href="{{asset('back_auth/assets/plugins/morris/morris.css')}}">
-	<link rel="stylesheet" href="{{asset('back_auth/assets/css/style.css')}}"> </head>
+	<link rel="stylesheet" href="{{asset('back_auth/assets/css/style.css')}}">
+</head>
 
 <body>
 	<div class="main-wrapper login-body">
@@ -21,8 +22,8 @@
 					<div class="login-left"> <img class="img-fluid" src="{{asset('back_auth/assets/img/logo.png')}}" alt="Logo"> </div>
 					<div class="login-right">
 						<div class="login-right-wrap">
-                        @yield('auth-form')
 
+                            @yield('auth-form')
 
 						</div>
 					</div>
