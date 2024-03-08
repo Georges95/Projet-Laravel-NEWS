@@ -22,7 +22,7 @@
     		<div class="profile-header">
     			<div class="row align-items-center">
     				<div class="col-auto profile-image">
-    					<a href="#"> <img class="rounded-circle" alt="User Image" src="assets/img/profiles/avatar-01.png"> </a>
+    					<a href="#"> <img class="rounded-circle" alt="User Image" src= {{ asset('back_auth/assets/profile/'.\Illuminate\Support\Facades\Auth::user()->image)}}> </a>
     				</div>
     				<div class="col ml-md-n2 profile-user-info">
     					<h4 class="user-name mb-3">{{ \Illuminate\Support\Facades\Auth::user()->name }}</h4>
@@ -38,6 +38,9 @@
     		</div>
     		<div class="tab-content profile-tab-cont">
     			<div class="tab-pane fade show active" id="per_details_tab">
+                    @if (session('status'))
+                        <div class="alert alert-success"> {{session('status')}} </div>
+                    @endif
     				<div class="row">
     					<div class="col-lg-12">
     						<div class="card">
@@ -49,13 +52,13 @@
     								</h5>
 
     								<div class="row">
-    									<p class="col-sm-3 text-sm-right mb-0 mb-sm-3">{{ \Illuminate\Support\Facades\Auth::user()->name }}</p>
-    									<p class="col-sm-9">Doe</p>
+    									<p class="col-sm-3 text-sm-right mb-0 mb-sm-3">Nom</p>
+    									<p class="col-sm-9">{{ \Illuminate\Support\Facades\Auth::user()->name }}</p>
     								</div>
     								<div class="row">
-    									<p class="col-sm-3 text-sm-right mb-0 mb-sm-3">{{ \Illuminate\Support\Facades\Auth::user()->email }}</p>
+    									<p class="col-sm-3 text-sm-right mb-0 mb-sm-3">Email</p>
     									<p class="col-sm-9">
-    										<a href="">johndoe@gmail.com</a>
+    										<a href="">{{ \Illuminate\Support\Facades\Auth::user()->email }}</a>
     									</p>
     								</div>
     							</div>
@@ -68,18 +71,29 @@
     										<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
     									</div>
     									<div class="modal-body">
-    										<form>
+    										<form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                @method('PATCH')
     											<div class="row form-row">
     												<div class="col-12 col-sm-6">
     													<div class="form-group">
     														<label>Nom</label>
-    														<input type="text" class="form-control" value="{{ \Illuminate\Support\Facades\Auth::user()->name }}"> </div>
+    														<input type="text" class="form-control" name="name" value="{{ \Illuminate\Support\Facades\Auth::user()->name }}">
+                                                        </div>
     												</div>
 
     												<div class="col-12 col-sm-6">
     													<div class="form-group">
     														<label>Email</label>
-    														<input type="email" class="form-control" value="{{ \Illuminate\Support\Facades\Auth::user()->email }}"> </div>
+    														<input type="email" class="form-control" name="email" value="{{ \Illuminate\Support\Facades\Auth::user()->email }}">
+                                                        </div>
+    												</div>
+
+                                                    <div class="col-12 col-sm-6">
+    													<div class="form-group">
+    														<label>Photo de profile</label>
+    														<input type="file" name="image" class="form-control"/>
+                                                        </div>
     												</div>
     											</div>
     											<button type="submit" class="btn btn-primary btn-block">Enregistrer les modifications</button>
@@ -97,16 +111,30 @@
     						<h5 class="card-title">Modifier le mot de passe</h5>
     						<div class="row">
     							<div class="col-md-10 col-lg-6">
-    								<form>
+    								<form action="{{route('password.update')}}" method="POST">
+                                        @csrf
+                                        @method('PUT')
     									<div class="form-group">
     										<label>Ancien mot de passe</label>
-    										<input type="password" class="form-control"> </div>
+    										<input type="password" name="current_password" class="form-control">
+                                            @error('current_password')
+                                                <p class="text-red-500 mt-2"> {{$message}} <</p>
+                                            @enderror
+                                        </div>
     									<div class="form-group">
     										<label>Nouveau mot de passe</label>
-    										<input type="password" class="form-control"> </div>
+    										<input type="password" name="password" class="form-control">
+                                            @error('password')
+                                                <p class="text-red-500 mt-2"> {{$message}} </p>
+                                            @enderror
+                                        </div>
     									<div class="form-group">
     										<label>Confirmer motde passe</label>
-    										<input type="password" class="form-control"> </div>
+    										<input type="password" name="password_confirmation" class="form-control">
+                                            @error('password_confirmation')
+                                                <p class="text-red-500 mt-2"> {{$message}} <</p>
+                                            @enderror
+                                        </div>
     									<button class="btn btn-primary" type="submit">Enregistrer les modifications</button>
     								</form>
     							</div>

@@ -9,13 +9,13 @@
     <p class="account-subtitle">Entrer votre email pour obtenir le lien de ré-initialisation</p>
 
         @if (session('status'))
-            <div class="alert alert-success">{{session('status')}} </div>
+            <div class="alert alert-success">{{ session('status') }} </div>
         @endif
 
         <form action="{{route('password.email')}}" method="POST">
             @csrf
 			<div class="form-group">
-				<input class="form-control" type="email" name="email" value="{{old('email')}}" placeholder="Email">
+				<input class="form-control" type="email" name="email" value="{{ old('email') }}" placeholder="Email">
             </div>
 
 			<div class="form-group mb-0">

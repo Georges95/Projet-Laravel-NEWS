@@ -6,30 +6,30 @@
 		<form action="{{route('register')}}" method="POST">
             @csrf
 			<div class="form-group">
-				<input class="form-control" type="text" name="name" value="{{old('name')}}" placeholder="Nom">
+				<input class="form-control" type="text" name="name" value="{{ old('name' )}}" placeholder="Nom">
                 @error('name')
-                       <p class="text-red-500 mt-2" >{{$message}} </p>
+                       <p class="text-red-500 mt-2" >{{ $message }} </p>
                 @enderror
 			</div>
 
 			<div class="form-group">
-				<input class="form-control" type="email" name="email" value="{{old('email')}}" placeholder="Email">
+				<input class="form-control" type="email" name="email" value="{{ old('email' )}}" placeholder="Email">
                 @error('email')
-                    <p class="text-red-500 mt-2" >{{$message}} </p>
+                    <p class="text-red-500 mt-2" >{{ $message }} </p>
                 @enderror
 			</div>
 
 			<div class="form-group">
-				<input class="form-control" type="password" name="password" value="{{old('password')}}" placeholder="Mot de passe">
+				<input class="form-control" type="password" name="password" value="{{ old('password' )}}" placeholder="Mot de passe">
                 @error('password')
-                    <p class="text-red-500 mt-2" >{{$message}} </p>
+                    <p class="text-red-500 mt-2" >{{ $message }} </p>
                 @enderror
             </div>
 
 			<div class="form-group">
-				<input class="form-control" type="password" name="password_confirmation" value="{{old('password_confirmation')}}" placeholder="Confirmer Mot de passe">
+				<input class="form-control" type="password" name="password_confirmation" value="{{ old('password_confirmation' )}}" placeholder="Confirmer Mot de passe">
                 @error('password_confirmation')
-                    <p class="text-red-500 mt-2" >{{$message}} </p>
+                    <p class="text-red-500 mt-2" >{{ $message }} </p>
                 @enderror
             </div>
 
@@ -39,5 +39,5 @@
 
 		</form>
 
-			<div class="text-center dont-have">Vous avez deja un compte ? <a href="{{route('login')}}">Se connecter</a> </div>
+			<div class="text-center dont-have">Vous avez deja un compte ? <a href="{{ route('login') }}">Se connecter</a> </div>
 @endsection
