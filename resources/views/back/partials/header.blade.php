@@ -52,6 +52,7 @@
               <a class="dropdown-item" href="settings.html">Paramètres</a>
 
                 <form action="{{ route('logout') }}" method="POST">
+                    
                     @csrf
                     <button class="btn dropdown-item">Deconnexion</button>
                 </form>
